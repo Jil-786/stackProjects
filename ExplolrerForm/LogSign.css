@@ -1,0 +1,27 @@
+.login-container {
+    display: flex;
+    height: 100vh;
+}
+.login-image {
+    flex: 1;
+    background: url('https://ideogram.ai/assets/image/lossless/response/wYiHxkjGRsafeGslZfIYgQ') no-repeat center center;
+    background-size: cover;
+    border-radius: 15px; /* Rounded corners */
+    overflow: hidden; /* Ensure the image stays within the rounded corners */
+}
+.login-form {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form-container {
+    width: 90%; /* Increased width */
+    max-width: 500px; /* Increased max-width */
+}
+.form-container {
+    background: rgba(237, 231, 231, 0.8); /* Light gray background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(221, 215, 215, 0.5); /* Gray shadow */
+}
