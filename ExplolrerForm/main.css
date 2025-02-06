@@ -1,0 +1,15 @@
+body {
+    font-family: Arial, sans-serif;
+}
+.navbar {
+    margin-bottom: 20px;
+}
+.card {
+    transition: transform 0.2s;
+}
+.card:hover {
+    transform: scale(1.05);
+}
+.jumbotron h1, .jumbotron p {
+    color: #ff6347;
+}
