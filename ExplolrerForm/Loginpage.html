@@ -15,7 +15,7 @@
             <div class="form-container">
                 <h1 class="text-center" style="color: #ff6347;">Explorer Form</h1>
                 <h2 class="text-center">Login</h2>
-                <form action="main.html" >
+                <form  method="post">
                     <div class="form-group">
                         <label for="email">Email address</label>
                         <input type="email" class="form-control" id="email" placeholder="Enter email" required>
@@ -29,11 +29,13 @@
                     </div>
                         <div class="text-center">
                             <a href="signup.html" class="btn btn-link">Create an Account</a>
+                            <p id="error-message" class="text-center text-danger"></p>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+    <script src="Login.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

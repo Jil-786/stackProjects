@@ -4,21 +4,3 @@ body {
 .navbar {
     margin-bottom: 20px;
 }
-.card {
-    transition: transform 0.2s;
-}
-.card:hover {
-    transform: scale(1.05);
-}
-.main.jumbotron h1 {
-    color: #f7f5f5;
-}
-.main.jumbotron {
-    background-image: url("https://ideogram.ai/assets/progressive-image/balanced/response/xZqpcmZmQ6CNhu0bNP4yqw"); 
-    background-size: cover; 
-    background-position: center; 
-    color: white;
-}
-.jumbotron p {
-    color: #040404;
-}

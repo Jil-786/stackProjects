@@ -17,171 +17,31 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" href="main.html">Home</a>
+                    <a class="nav-link active" href="#" data-target="home.html">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="services.html">Services</a>
+                    <a class="nav-link" href="#" data-target="services.html">Services</a>
                 </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="contact.html">Contact</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-target="contact.html">Contact</a>
                 </li>
             </ul>
         </div>
     </nav>
+    <iframe id="contentFrame" src="home.html" style="width: 100%; height: 100vh; border: none;"></iframe>
 
-    <div class="main jumbotron text-left mb-0">
-        <h1 class="display-4">Explorer Form</h1>
-        <p class="lead">Explore various courses and enhance your skills.</p>
-    </div>
+    <script>
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                document.querySelectorAll('.nav-link').forEach(item => item.classList.remove('active'));
+                this.classList.add('active');
+                document.getElementById('contentFrame').src = this.getAttribute('data-target');
+            });
+        });
+    </script>
 
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card text-white bg-primary mb-3">
-                    <img src="https://ideogram.ai/assets/progressive-image/balanced/response/7_cwov3lT0Ki6PQ82COjNg" class="card-img-top" alt="Java">
-                    <div class="card-header">Java</div>
-                    <div class="card-body">
-                        <h5 class="card-title">Java Programming</h5>
-                        <p class="card-text">Learn the basics and advanced concepts of Java programming.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card text-white bg-secondary mb-3">
-                    <img src="https://ideogram.ai/assets/progressive-image/balanced/response/7ffMTCMBQi24ccLGgAyLyA" class="card-img-top" alt="Python">
-                    <div class="card-header">Python</div>
-                    <div class="card-body">
-                        <h5 class="card-title">Python Programming</h5>
-                        <p class="card-text">Master Python programming with hands-on projects and examples.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card text-white bg-success mb-3">
-                    <img src="https://ideogram.ai/assets/progressive-image/balanced/response/_npJxxX8SiW5AhIlS2-G_A" class="card-img-top" alt="JavaScript">
-                    <div class="card-header">JavaScript</div>
-                    <div class="card-body">
-                        <h5 class="card-title">JavaScript Programming</h5>
-                        <p class="card-text">Dive into JavaScript and learn to build dynamic web applications.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card text-white bg-danger mb-3">
-                    <img src="https://ideogram.ai/assets/image/lossless/response/mslczG0HQeiyl43MrkuDnA" class="card-img-top" alt="C++">
-                    <div class="card-header">C++</div>
-                    <div class="card-body">
-                        <h5 class="card-title">C++ Programming</h5>
-                        <p class="card-text">Understand the fundamentals and advanced topics of C++.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card text-white bg-warning mb-3">
-                    <img src="https://ideogram.ai/assets/progressive-image/balanced/response/hnsSn-eESAekA3Ks_4_ctA" class="card-img-top" alt="Ruby">
-                    <div class="card-header">Ruby</div>
-                    <div class="card-body">
-                        <h5 class="card-title">Ruby Programming</h5>
-                        <p class="card-text">Get started with Ruby and build powerful web applications.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card text-white bg-info mb-3">
-                    <img src="https://ideogram.ai/assets/image/lossless/response/TcJiWN_XTSOK9M34gTmW5w" class="card-img-top" alt="PHP">
-                    <div class="card-header">PHP</div>
-                    <div class="card-body">
-                        <h5 class="card-title">PHP Programming</h5>
-                        <p class="card-text">Learn PHP and create dynamic and interactive web pages.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- <div class="col-md-4">
-                <div class="card text-white bg-dark mb-3">
-                    <img src="images/go.jpg" class="card-img-top" alt="Go">
-                    <div class="card-header">Go</div>
-                    <div class="card-body">
-                        <h5 class="card-title">Go Programming</h5>
-                        <p class="card-text">Explore the Go programming language and its applications.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card text-white bg-primary mb-3">
-                    <img src="images/spring.jpg" class="card-img-top" alt="Spring">
-                    <div class="card-header">Spring</div>
-                    <div class="card-body">
-                        <h5 class="card-title">Spring Framework</h5>
-                        <p class="card-text">Learn to build robust Java applications with Spring Framework.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card text-white bg-secondary mb-3">
-                    <img src="images/django.jpg" class="card-img-top" alt="Django">
-                    <div class="card-header">Django</div>
-                    <div class="card-body">
-                        <h5 class="card-title">Django Framework</h5>
-                        <p class="card-text">Master web development with Python using Django Framework.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card text-white bg-success mb-3">
-                    <img src="images/react.jpg" class="card-img-top" alt="React">
-                    <div class="card-header">React</div>
-                    <div class="card-body">
-                        <h5 class="card-title">React Framework</h5>
-                        <p class="card-text">Build dynamic user interfaces with React Framework.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card text-white bg-danger mb-3">
-                    <img src="images/qt.jpg" class="card-img-top" alt="Qt">
-                    <div class="card-header">Qt</div>
-                    <div class="card-body">
-                        <h5 class="card-title">Qt Framework</h5>
-                        <p class="card-text">Develop cross-platform applications with Qt Framework.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card text-white bg-warning mb-3">
-                    <img src="images/rails.jpg" class="card-img-top" alt="Rails">
-                    <div class="card-header">Rails</div>
-                    <div class="card-body">
-                        <h5 class="card-title">Ruby on Rails</h5>
-                        <p class="card-text">Create powerful web applications with Ruby on Rails.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card text-white bg-info mb-3">
-                    <img src="images/laravel.jpg" class="card-img-top" alt="Laravel">
-                    <div class="card-header">Laravel</div>
-                    <div class="card-body">
-                        <h5 class="card-title">Laravel Framework</h5>
-                        <p class="card-text">Build modern PHP applications with Laravel Framework.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card text-white bg-dark mb-3">
-                    <img src="images/gin.jpg" class="card-img-top" alt="Gin">
-                    <div class="card-header">Gin</div>
-                    <div class="card-body">
-                        <h5 class="card-title">Gin Framework</h5>
-                        <p class="card-text">Develop high-performance web applications with Gin Framework.</p>
-                    </div>
-                </div>
-            </div> -->
-        </div>
-    </div>
-    <div class="jumbotron text-center bg-info text-white mb-0">
-        <h2>About Us</h2>
-        <p>We provide a variety of programming courses to help you enhance your skills and advance your career.</p>
-    </div>
+    
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
