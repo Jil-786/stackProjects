@@ -36,7 +36,7 @@ document.getElementById('signupForm').addEventListener('submit', function(event)
                 .then(response => response.json())
                 .then(data => {
                     errorMessage.textContent = '';
-                    window.location.href = 'main.html';
+                    window.location.href = `main.html?email=${encodeURIComponent(email)}`;
                 })
                 .catch((error) => {
                     errorMessage.textContent = 'Error: ' + error.message;

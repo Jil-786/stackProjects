@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector('form');
     const emailInput = document.getElementById('email');
@@ -11,26 +12,23 @@ document.addEventListener('DOMContentLoaded', function() {
         const password = passwordInput.value;
 
         try {
-            // Check if email exists
             const emailCheckResponse = await fetch(`http://localhost:7800/api/users/check-email/${email}`);
             const emailExists = await emailCheckResponse.text();
 
-            if (emailExists == 'false') {
+            if (emailExists === 'false') {
                 errorMessageElement.textContent = 'Email doesn\'t exist';
                 return;
             }
 
-            // Get the password for the email
             const passwordResponse = await fetch(`http://localhost:7800/api/users/get-password/${email}`);
             const storedPassword = await passwordResponse.text();
 
-            if (password != storedPassword) {
+            if (password !== storedPassword) {
                 errorMessageElement.textContent = 'Password mismatch';
                 return;
             }
 
-            // If email exists and password matches, redirect to main.html
-            window.location.href = 'main.html';
+            window.location.href = `main.html?email=${encodeURIComponent(email)}`;
         } catch (error) {
             console.error('Error:', error);
             errorMessageElement.textContent = 'An error occurred. Please try again later.';
