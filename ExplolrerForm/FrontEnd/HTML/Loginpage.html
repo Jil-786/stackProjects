@@ -7,6 +7,11 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/LogSign.css">
     <link rel="icon" href="../xtra/favicon.ico" type="image/x-icon">
+    <meta name="google-signin-client_id" content="491121178053-f3pvnv2hf6cdnvkr5uo6aph61rdl3jfl.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://www.gstatic.com 'nonce-randomNonceValue123';">
 </head>
 <body>
     <div class="login-container">
@@ -15,7 +20,7 @@
             <div class="form-container">
                 <h1 class="text-center" style="color: #ff6347;">Explorer Form</h1>
                 <h2 class="text-center">Login</h2>
-                <form  method="post">
+                <form method="post">
                     <div class="form-group">
                         <label for="email">Email address</label>
                         <input type="email" class="form-control" id="email" placeholder="Enter email" required>
@@ -27,14 +32,35 @@
                     <div class="d-flex justify-content-between">
                         <button type="submit" class="btn btn-primary mb-3" style="background-color: #ff6347; border: none; width: 100%;">Login</button>
                     </div>
-                        <div class="text-center">
-                            <a href="signup.html" class="btn btn-link">Create an Account</a>
-                            <p id="error-message" class="text-center text-danger"></p>
+                    <div class="text-center">
+                        <p id="error-message" class="text-center text-danger"></p>
+                    </div>
+                    <div class="text-center">
+                        <a href="signup.html" class="btn btn-link">Create an Account</a>
+                        <div class="d-flex justify-content-center">
+                            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                        </div>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+    <script nonce="randomNonceValue123">
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+            console.log('Name: ' + profile.getName());
+            console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+        }
+
+        // Sign out function (optional)
+        function signOut() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function () {
+                console.log('User signed out.');
+            });
+        }
+    </script>
     <script src="../JS/Login.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
