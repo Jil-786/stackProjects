@@ -17,7 +17,7 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-4">
-                <div class="card text-white bg-primary mb-3">
+                <div class="card text-white bg-primary mb-3" style="cursor: pointer;" onclick="openInIframe('https://10web-site.ai/179/sadly-settled-halibut/')">
                     <img src="https://ideogram.ai/assets/progressive-image/balanced/response/7_cwov3lT0Ki6PQ82COjNg" class="card-img-top" alt="Java">
                     <div class="card-header">Java</div>
                     <div class="card-body">
@@ -26,6 +26,11 @@
                     </div>
                 </div>
             </div>
+    <script>
+        function openInIframe(url) {
+            window.location.href = `Frame.html?url=${encodeURIComponent(url)}`;
+        }
+    </script>
             <div class="col-md-4">
                 <div class="card text-white bg-secondary mb-3">
                     <img src="https://ideogram.ai/assets/progressive-image/balanced/response/7ffMTCMBQi24ccLGgAyLyA" class="card-img-top" alt="Python">
