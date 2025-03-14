@@ -1,0 +1,183 @@
+/* CSS Variables */
+:root {
+  --primary-color: #4CAF50;
+  --primary-hover: #45a049;
+  --accent-color: #3498db;
+  --light-bg: #f5f5f5;
+  --warning-bg: #fffde7;
+  --text-color: #333;
+  --text-light: #666;
+  --border-color: #ccc;
+  --white: #fff;
+}
+
+/* Loader animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loader {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid var(--accent-color);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 2s linear infinite;
+  margin-right: 10px;
+}
+
+/* Map container */
+#map {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+/* Control panel */
+.control-panel {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: var(--light-bg);
+  border-radius: 5px;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.map-input {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+}
+
+.map-input:focus {
+  outline: 2px solid var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.route-button {
+  padding: 8px 16px;
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.route-button:hover:not(:disabled) {
+  background-color: var(--primary-hover);
+}
+
+.route-button:focus {
+  outline: 2px solid var(--accent-color);
+}
+
+.route-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.loading-indicator {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: var(--warning-bg);
+  border-radius: 4px;
+}
+
+.warning-message {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #fff3cd;
+  border-left: 4px solid #ffc107;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #856404;
+}
+
+.help-text {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--text-light);
+}
+
+/* Marker styles */
+.marker-emoji {
+  font-size: 24px;
+  text-align: center;
+}
+
+.marker-label {
+  background-color: var(--white);
+  border-radius: 4px;
+  padding: 2px 5px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  margin-top: 2px;
+  white-space: nowrap;
+}
+
+.source-marker-icon, 
+.destination-marker-icon {
+  background: none;
+  border: none;
+}
+
+/* Leaflet popup styling */
+.leaflet-popup-content-wrapper {
+  background-color: var(--white);
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.leaflet-popup-content {
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 10px;
+}
+
+.leaflet-popup-tip {
+  background-color: var(--white);
+}
+/* Add these styles to your OSMMap.css file */
+
+.osm-map-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.control-panel {
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  z-index: 1000;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#map {
+  width: 100%;
+  flex-grow: 1;
+}
+
+/* Your existing styles... */
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .control-panel {
+    padding: 8px;
+  }
+  
+  .map-input, .route-button {
+    padding: 10px; /* Slightly larger touch targets on mobile */
+  }
+}
