@@ -23,8 +23,8 @@ EcoMotoPlan is a smart trip-planning application designed for motorcycle riders.
 ### Backend (Spring Boot)
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-repo/EcoMotoPlan.git
-   cd EcoMotoPlan
+   git clone https://github.com/Jil-786/stackProjects.git
+   cd stackProjects/Plan2Ride
    ```
 2. Configure **application.properties**:
    ```properties
@@ -39,7 +39,7 @@ EcoMotoPlan is a smart trip-planning application designed for motorcycle riders.
 ### Frontend (React)
 1. Navigate to the frontend directory:
    ```sh
-   cd frontend
+   cd ecomotoplan
    ```
 2. Install dependencies:
    ```sh
@@ -47,9 +47,7 @@ EcoMotoPlan is a smart trip-planning application designed for motorcycle riders.
    ```
 3. Configure **.env**:
    ```env
-  REACT_APP_GATEWAY_URL=http://localhost:7000 **gateway**
-  REACT_APP_PLAN_API_URL=http://localhost:2000/gemini/ask ** AI**
-  REACT_APP_PRODUCER_URL=http://localhost:9100 ** for  kafka**
+   present in the env file
    ```
 4. Start the frontend:
    ```sh
