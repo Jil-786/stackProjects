@@ -1,2 +1,4 @@
 # stackProjects
-html +springboot+h2 db
+Front-end : html,css,js,reactJs,tailwindCSS,bootstrap
+Back-end : SpringBoot
+Database :H2 Database, MongoDB
