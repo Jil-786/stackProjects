@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import Popup from './Popup'; // Assuming Popup is a separate component
 
-export default function SuggestionsForm() {
-    const [email, setEmail] = useState('');
+export default function SuggestionsForm({ user }) {
+    
     const [message, setMessage] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [success, setSuccess] = useState(false);
@@ -16,22 +16,15 @@ export default function SuggestionsForm() {
         setError('');
 
         // Validation checks
-        if (!email || !message) {
-            setError('Both email and message fields are required.');
-            return;
-        }
-
-        // Email format validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            setError('Please enter a valid email address.');
+        if (!message) {
+            setError('message field is required.');
             return;
         }
 
         setIsSubmitting(true);
         setSuccess(false);
 
-        const concatenatedString = `${email}->${message}`;
+        const concatenatedString = `${user.email}->${message}`;
         const url = `${process.env.REACT_APP_PRODUCER_URL}/suggest/${encodeURIComponent(concatenatedString)}`;
 
         try {
@@ -51,7 +44,6 @@ export default function SuggestionsForm() {
             setShowPopup(true);
 
             setSuccess(true);
-            setEmail('');
             setMessage('');
         } catch (err) {
             setError('Failed to submit. Please try again.');
@@ -67,15 +59,10 @@ export default function SuggestionsForm() {
                 <form onSubmit={handleSubmit} noValidate>
                     <div className="mb-3">
                         <label htmlFor="email" className="form-label">Email address</label>
-                        <input
-                            type="email"
-                            className={`form-control ${error ? 'is-invalid' : ''}`}
-                            id="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            required
-                            aria-describedby="emailHelp"
-                        />
+                        <div className="form-control bg-light border rounded p-2">
+                            {user.email}
+                        </div>
+
                         {error && <div className="invalid-feedback">{error}</div>}
                     </div>
                     <div className="mb-3">
