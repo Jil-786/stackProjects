@@ -49,7 +49,12 @@ function App() {
               <Route index element={<OSMMap onConfirm={handleConfirmRoute} />} />
               <Route path="bikesCompany" element={<BikeCompany />} />
               <Route path="bikesCompany/model" element={<Bikes />} />
-              <Route path="bikesCompany/model/tripPlan" element={<TripPlan source={source} destination={destination} />} />
+              <Route path="bikesCompany/model/tripPlan" element={<TripPlan 
+                source={source} 
+                destination={destination} 
+                user={user} 
+                setUser={setUser} 
+              />} />
             </Route>
 
             {/* Redirect /login to home if logged in */}

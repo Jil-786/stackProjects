@@ -40,11 +40,14 @@ export default function NavBar({ title, user, setUser }) {
           <ul className="navbar-nav ms-auto">
             {user ? (
               <li className="nav-item d-flex align-items-center">
+                {/* Profile Picture (Optional) */}
                 {/* {user.picture && (
                   <img src={user.picture} alt="Profile" className="rounded-circle me-2" width="40" height="40" />
                 )} */}
-                <span className="nav-link text-white">{user.name}</span>
-                <button className="btn btn-danger ms-3" onClick={handleLogout}>Logout</button>
+                <span className="nav-link text-white me-3">
+                  {user.name} | Tokens: <strong>{user.token}</strong>
+                </span>
+                <button className="btn btn-danger" onClick={handleLogout}>Logout</button>
               </li>
             ) : (
               <li className="nav-item">
