@@ -7,7 +7,7 @@ export default function NavBar({ title, user, setUser }) {
 
   const handleLogout = () => {
     axios
-      .post("http://localhost:8000/auth/logout", {}, { withCredentials: true })
+      .post(`${process.env.REACT_APP_OAUTH_URL}/auth/logout`, {}, { withCredentials: true })
       .then(() => {
         setUser(null);
         navigate("/login"); // Redirect to login page after logout

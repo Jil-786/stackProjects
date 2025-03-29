@@ -26,7 +26,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/auth/userinfo", { withCredentials: true })
+      .get(`${process.env.REACT_APP_OAUTH_URL}/auth/userinfo`, { withCredentials: true })
       .then((response) => setUser(response.data))
       .catch(() => setUser(null))
       .finally(() => setLoading(false));

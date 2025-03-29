@@ -63,7 +63,7 @@ export default function TripPlan({ user, setUser }) {
       localStorage.setItem('selectedBike', bike.model_name);
 
       // Deduct Token After a Valid Response
-      const tokenResponse = await axios.put(`http://localhost:8001/auth/use-token?email=${user.email}`);
+      const tokenResponse = await axios.put(`${process.env.REACT_APP_USER_DATA}/auth/use-token?email=${user.email}`);
       if (tokenResponse.data.status === "error") {
         setPopupMessage("No tokens left! Come back tomorrow.");
         setShowPopup(true);

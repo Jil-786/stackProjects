@@ -4,7 +4,7 @@ import "./CSS/Login.css"; // Import custom styles
 
 export default function Login() {
   const handleLogin = () => {
-    window.location.href = "http://localhost:8000/oauth2/authorization/google";
+    window.location.href = `${process.env.REACT_APP_OAUTH_URL}/oauth2/authorization/google`;
   };
 
   return (
